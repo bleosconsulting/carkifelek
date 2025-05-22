@@ -39,3 +39,6 @@ document.getElementById("spin-button").addEventListener("click", () => {
     resultContainer.style.display = "block";
   }, 5000);
 });
+document.getElementById("popup-close").addEventListener("click", () => {
+  document.getElementById("wheel-popup").style.display = "none";
+});
