@@ -12,7 +12,15 @@ const resultContainer = document.getElementById("result-container");
 const codes = ["INDIRIM10", "INDIRIM20", "INDIRIM30", "INDIRIM40", "INDIRIM50", "INDIRIM60"];
 let usedCodes = new Set();
 
+const hasSpunKey = "carkifelek_has_spun";
+
 document.getElementById("spin-button").addEventListener("click", () => {
+  // Kullanıcı daha önce döndürdü mü kontrol et
+  if (localStorage.getItem(hasSpunKey)) {
+    alert("Bu kampanyaya daha önce katıldınız.");
+    return;
+  }
+
   const available = codes.filter(code => !usedCodes.has(code));
   if (available.length === 0) {
     alert("Tüm kodlar tükendi!");
@@ -21,6 +29,7 @@ document.getElementById("spin-button").addEventListener("click", () => {
 
   const selectedCode = available[Math.floor(Math.random() * available.length)];
   usedCodes.add(selectedCode);
+  localStorage.setItem(hasSpunKey, "true"); // işaretle
 
   const angle = 360 * 5 + Math.floor(Math.random() * 360);
   wheel.style.transform = `rotate(${angle}deg)`;
