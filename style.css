@@ -1,26 +1,60 @@
 body {
   font-family: sans-serif;
-  background: #f0f0f0;
-  text-align: center;
+  margin: 0;
+  background: url("bg.jpg") no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
+
 #wheel-popup {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: white;
-  border: 2px solid #ccc;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.9);
   border-radius: 10px;
   padding: 20px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  text-align: center;
 }
+
+#wheel-container {
+  position: relative;
+  display: inline-block;
+}
+
+#wheel-img {
+  width: 300px;
+  height: 300px;
+  transition: transform 5s ease-out;
+  z-index: 2;
+  position: relative;
+}
+
+.lamp-frame {
+  position: absolute;
+  width: 340px;
+  height: 340px;
+  top: -20px;
+  left: -20px;
+  background: url("lamp.gif") no-repeat center center;
+  background-size: contain;
+  z-index: 1;
+  pointer-events: none;
+  animation: blink 1s infinite;
+}
+
 #spin-button {
   margin-top: 20px;
   padding: 10px 20px;
   font-size: 18px;
-  background-color: #00b894;
+  background-color: #e74c3c;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
 }

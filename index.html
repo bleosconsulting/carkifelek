@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Çarkıfelek</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div id="wheel-popup" style="display:none;">
     <div id="wheel-container">
-      <canvas id="wheel" width="400" height="400"></canvas>
+      <div class="lamp-frame"></div>
+      <img id="wheel-img" src="cark.png" alt="Çark" />
       <button id="spin-button">Çevir!</button>
     </div>
     <div id="result-container" style="display:none;">
@@ -17,6 +18,6 @@
       <p id="result-code"></p>
     </div>
   </div>
-  <script src="spinwheel.js"></script>
+  <script src="spin.js"></script>
 </body>
 </html>
